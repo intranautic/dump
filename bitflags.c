@@ -8,17 +8,19 @@ enum {
   FLAG_C = 1 << 2
 };
 
+void check_flags(unsigned int flags) {
+  puts((flags & FLAG_A) ? "Flag A set!" : "Flag A not set!");
+  puts((flags & FLAG_B) ? "Flag B set!" : "Flag B not set!");
+  puts((flags & FLAG_C) ? "Flag C set!" : "Flag C not set!");
+  return;
+}
+
 int main(int argc, char** argv) {
   // flags: 00000111
-  unsigned char flags = FLAG_A | FLAG_B | FLAG_C;
-  if (flags & FLAG_A)
-    puts("Flag A set!");
-
-  if (flags & FLAG_B)
-    puts("Flag B set!");
-
-  if (flags & FLAG_C)
-    puts("Flag C set!");
-
+  unsigned int flags = FLAG_A | FLAG_B | FLAG_C;
+  check_flags(flags);
+  // we can unset bitflags via bitwise and, and the not operator
+  flags &= ~(FLAG_A | FLAG_B | FLAG_C);
+  check_flags(flags);
   return 0;
 }
