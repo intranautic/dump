@@ -1,6 +1,8 @@
 #include <iostream>
+#include <vector>
+#include <iostream>
 
-class 
+
 
 int main(int argc, char** argv) {
 
