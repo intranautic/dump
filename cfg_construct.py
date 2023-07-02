@@ -51,6 +51,9 @@ def cfg_construct(program):
 
     for block in cfg['nodes']:
       # handle single successor, shit messy code fuck fuck fuck
+      # FUCK ERROR HANDLNIG, JUST IGNORE IT HAHAHAHAHAHAHAH
+      if not block:
+        break
       if block[-1]['op'] in TERM:
         if block[-1]['op'] == 'ret':
           cfg['edges'].append(block)
