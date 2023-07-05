@@ -79,7 +79,6 @@ int main(int argc, char** argv) {
   // resource which should be dynamically copied. as type char* doesnt have a copy
   // constructor either it will default to shallow copying the pointer when passing by
   // value -> invoking (default) copy constructor
-  delete x;
-  // BOOM!! DOUBLE FREE
+  delete x; // BOOM!! DOUBLE FREE
   return 0;
 }
