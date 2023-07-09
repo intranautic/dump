@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import angr
+from angr.analyses import Decompiler
 from sys import argv
 from typing import List
 
@@ -16,19 +17,30 @@ def disable_decompiler_option(params: List[str], values):
 # non flexible angr decompiler wrapper for testing purposes
 def angr_decompile(
     project: angr.Project,
-    dec_list: [str] = None
+    symbols: [str] = None
   ) -> str:
   buffer=''
-  if dec_list:
+  try:
     cfg = project.analyses.CFGFast(normalize=True)
-
-    for func in dec_list:
+  except Exception as e:
+    print(e)
+  if symbols:
+    for func in symbols:
       buffer += project.analyses.Decompiler(
         cfg.functions[func],
-        cfg = cfg,
+        cfg = cfg.model,
         kb = cfg.kb,
         options=disable_decompiler_option(['cstyle_ifs'], [True])
       ).codegen.text
+  else:
+    for func in cfg.functions.values():
+      print(func)
+      codegen = project.analyses[Decompiler].prep()(
+        func,
+        cfg=cfg.model,
+      ).codegen
+      if codegen is not None:
+        buffer += codegen.text
   return buffer
 
 if __name__ == '__main__':
