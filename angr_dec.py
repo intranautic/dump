@@ -2,22 +2,26 @@
 import angr
 from angr.analyses import Decompiler
 from sys import argv
-from typing import List
+from typing import List, Tuple
+import logging
 
-def disable_decompiler_option(params: List[str], values):
-    return list(zip(
-      [
-        opt for opt in angr.analyses.decompiler.decompilation_options.options
-        if opt.param in params
-      ],
-      values,
-    ))
+def set_decompiler_option(decompiler_options: List[Tuple], params: List[Tuple]) -> List[Tuple]:
+  if decompiler_options is None:
+    decompiler_options = []
+
+  for param, value in params:
+    for option in angr.analyses.decompiler.decompilation_options.options:
+      if param == option.param:
+        decompiler_options.append((option, value))
+
+  return decompiler_options
 
 # return "pretty" decompiler output
 # non flexible angr decompiler wrapper for testing purposes
 def angr_decompile(
     project: angr.Project,
-    symbols: [str] = None
+    symbols: [str] = None,
+    decompiler_options=None
   ) -> str:
   buffer=''
   try:
@@ -30,11 +34,9 @@ def angr_decompile(
         cfg.functions[func],
         cfg = cfg.model,
         kb = cfg.kb,
-        options=disable_decompiler_option(['cstyle_ifs'], [True])
       ).codegen.text
   else:
     for func in cfg.functions.values():
-      print(func)
       codegen = project.analyses[Decompiler].prep()(
         func,
         cfg=cfg.model,
