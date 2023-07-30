@@ -49,6 +49,8 @@ if __name__ == '__main__':
   try:
     d = angr_decompile(angr.Project(argv[1], auto_load_libs=False), argv[2::])
     print(d)
+  except KeyError:
+    print('Function not found!')
   except IndexError:
     print('Usage: %s <binary> <symbol>' % argv[0])
 
