@@ -6,6 +6,7 @@
 
 class Human {
 public:
+  Human()=default;
   Human(const std::string& name, int age)
     : m_name(new char[name.length() + 1])
     , m_age(age)
@@ -51,16 +52,6 @@ public:
   }
 };
 
-class B : public Human {
-  using _super = ::Human;
-public:
-  using _super::_super;
-  virtual void speak() const override {
-    _super::speak(); 
-    std::cout << "I hate ice cream.\n";
-  }
-};
-
 // type erasure
 template <typename T>
 void speak(T speaking_object) {
@@ -70,15 +61,21 @@ void speak(T speaking_object) {
 
 int main(int argc, char** argv) {
   auto x = new A("Todd", 21);
-  auto y = new B("Jeremy", 22);
+
   // when not passing object by value, not by either reference or pointer, the object
   // is copied and the copy constructor is invoked.
+
+  // delete  
   speak(*x);
 
+  // shallow copy ref, destructor double free
+  A y;
+  y = *x;
   // this can lead to uaf bugs if a copy constructor is not explicitly declared fr a
   // resource which should be dynamically copied. as type char* doesnt have a copy
   // constructor either it will default to shallow copying the pointer when passing by
   // value -> invoking (default) copy constructor
-  delete x; // BOOM!! DOUBLE FREE
+
+  // destructor
   return 0;
 }
