@@ -1,5 +1,5 @@
 // custom template metaprogramming library from scratch
-// this is hell on earth, there is no reason why this should ever exist
+
 struct true_type {
   static constexpr bool value = true;
 };

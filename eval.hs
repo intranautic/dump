@@ -10,6 +10,7 @@ safediv :: Int -> Int -> Maybe Int
 safediv _ 0 = Nothing
 safediv x y = Just (x `div` y)
 
+{-
 -- inefficient safe div by currying with functors
 -- we can use applicatives to shorten this code.
 eval (Value x) = Just x
@@ -28,7 +29,7 @@ eval (Div l y) =
   eval l >>= \n ->
   eval y >>= \m -> 
     safediv n m
-
+-}
 
 eval (Value x) = Just x
 eval (Div l r) = 
