@@ -12,6 +12,8 @@
 // necessary structures for elf header
 #include <elf.h>
 
+#define _ELF_MAGIC "\x7f\x45\x4c\x46"
+
 // structure which holds all the section structures and additional information
 typedef struct {
   Elf64_Ehdr* ehdr;
@@ -23,7 +25,7 @@ typedef struct {
 } elf64_image;
 
 static elf64_image* elf64_parse(void* buffer, size_t size) {
-  if (memcmp(buffer, "\x7f\x45\x4c\x46", 4)) {
+  if (memcmp(buffer, _ELF_MAGIC, 4)) {
     puts("Error: not an ELF binary");
     return 0;
   }
