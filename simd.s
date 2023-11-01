@@ -3,10 +3,10 @@
 ; 32 sse and avx only if avx512 is supported else 16
 
 section .rodata
-  d1: dd 1, 2, 3, 4
-  d2: dd 5, 6, 7, 8
-  q1: dq 1, 2, 3, 4
-  q2: dq 5, 6, 7, 8
+  x1: dd 1, 2, 3, 4
+  x2: dd 5, 6, 7, 8
+  y1: dq 1, 2, 3, 4
+  y2: dq 5, 6, 7, 8
 
 section .text
 global _start
@@ -18,8 +18,8 @@ _start:
 
   ; xmm0: [32 bits: 0x1][32 bits: 0x2][32 bits: 0x3][32 bits: 0x4]
   ; xmm1: [32 bits: 0x5][32 bits: 0x6][32 bits: 0x7][32 bits: 0x8]
-  movdqu xmm0, [d1]
-  movdqu xmm1, [d2]
+  movdqu xmm0, [x1]
+  movdqu xmm1, [x2]
 
   paddd xmm0, xmm1
   nop ; break

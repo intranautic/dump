@@ -48,8 +48,12 @@ fn main() {
   // for block declaration yet require commas as opposed to sequences
   // of statements? this decision doesnt make sense to me..
 
-
-
+  let mut buffer = String::new();
+  // read_line method of io::stdin object returns Result
+  std::io::stdin()
+    .read_line(&mut buffer)
+    .expect("Failed to read line");
+  println!("Buffer: {buffer}");
 
   // fuck all this shit i want to know if i can invoke syscalls in rust
   unsafe {
