@@ -5,6 +5,12 @@ struct Human {
   age: u32,
 }
 
+impl Drop for Human {
+  fn drop(&mut self) {
+    println!("drop: {}", self.name);
+  }
+}
+
 fn main() -> Result<(), std::io::Error> {
   let x = Human {
     name: String::from("john"),
