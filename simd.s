@@ -5,8 +5,6 @@
 section .rodata
   x1: dd 1, 2, 3, 4
   x2: dd 5, 6, 7, 8
-  y1: dq 1, 2, 3, 4
-  y2: dq 5, 6, 7, 8
 
 section .text
 global _start
@@ -26,3 +24,4 @@ _start:
   .exit:
     mov rax, 60
     syscall
+
