@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package test;
+
+message Block {
+  required string buffer = 1;
+  required int32 length = 2;
+}
+

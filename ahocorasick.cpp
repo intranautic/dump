@@ -1,6 +1,9 @@
+// aho-corasick pattern matching algorithm
 #include <iostream>
+#include <string>
 #include <vector>
-#include <iostream>
+
+
 
 
 
