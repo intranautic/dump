@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 #define LIST_INIT()
 
 typedef struct list list_t;
