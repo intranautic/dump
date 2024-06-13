@@ -86,7 +86,7 @@ int main(int argc, char** argv) {
   // dont want to make conditional works some percent of the time i fucking
   // hope
   maze->buffer[entry] = ' ';
-  maze->buffer[(row-1)*col + entry] = ' ';
+  maze->buffer[(row-1)*col + (entry*2) % row] = ' ';
 
   for (int i = 0; i < maze->row; ++i) {
     for (int j = 0; j < maze->col; ++j)

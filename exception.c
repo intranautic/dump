@@ -6,6 +6,6 @@
 #include <setjmp.h>
 
 int main(int argc, char** argv) {
-
+  puts("A");
   return 0;
 }
