@@ -1,0 +1,47 @@
+[
+  {
+    "file": "./src/display.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "./src/display.c",
+      "-I/usr/include/SDL2",
+      "-D_GNU_SOURCE=1",
+      "-D_REENTRANT",
+      "-o",
+      "rasterizer"
+    ],
+    "directory": "/home/folly/render/triangle-rasterizer",
+    "output": "rasterizer"
+  },
+  {
+    "file": "./src/main.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "./src/main.c",
+      "-I/usr/include/SDL2",
+      "-D_GNU_SOURCE=1",
+      "-D_REENTRANT",
+      "-o",
+      "rasterizer"
+    ],
+    "directory": "/home/folly/render/triangle-rasterizer",
+    "output": "rasterizer"
+  },
+  {
+    "file": "./src/vec2.c",
+    "arguments": [
+      "gcc",
+      "-Wall",
+      "./src/vec2.c",
+      "-I/usr/include/SDL2",
+      "-D_GNU_SOURCE=1",
+      "-D_REENTRANT",
+      "-o",
+      "rasterizer"
+    ],
+    "directory": "/home/folly/render/triangle-rasterizer",
+    "output": "rasterizer"
+  }
+]

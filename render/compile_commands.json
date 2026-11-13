@@ -1,0 +1,171 @@
+[
+  {
+    "file": "./src/array.c",
+    "arguments": [
+      "gcc",
+      "-Wfatal-errors",
+      "-std=c23",
+      "./src/array.c",
+      "-o",
+      "renderer"
+    ],
+    "directory": "/home/folly/render",
+    "output": "renderer"
+  },
+  {
+    "file": "./src/camera.c",
+    "arguments": [
+      "gcc",
+      "-Wfatal-errors",
+      "-std=c23",
+      "./src/camera.c",
+      "-o",
+      "renderer"
+    ],
+    "directory": "/home/folly/render",
+    "output": "renderer"
+  },
+  {
+    "file": "./src/clipping.c",
+    "arguments": [
+      "gcc",
+      "-Wfatal-errors",
+      "-std=c23",
+      "./src/clipping.c",
+      "-o",
+      "renderer"
+    ],
+    "directory": "/home/folly/render",
+    "output": "renderer"
+  },
+  {
+    "file": "./src/display.c",
+    "arguments": [
+      "gcc",
+      "-Wfatal-errors",
+      "-std=c23",
+      "./src/display.c",
+      "-o",
+      "renderer"
+    ],
+    "directory": "/home/folly/render",
+    "output": "renderer"
+  },
+  {
+    "file": "./src/light.c",
+    "arguments": [
+      "gcc",
+      "-Wfatal-errors",
+      "-std=c23",
+      "./src/light.c",
+      "-o",
+      "renderer"
+    ],
+    "directory": "/home/folly/render",
+    "output": "renderer"
+  },
+  {
+    "file": "./src/main.c",
+    "arguments": [
+      "gcc",
+      "-Wfatal-errors",
+      "-std=c23",
+      "./src/main.c",
+      "-o",
+      "renderer"
+    ],
+    "directory": "/home/folly/render",
+    "output": "renderer"
+  },
+  {
+    "file": "./src/matrix.c",
+    "arguments": [
+      "gcc",
+      "-Wfatal-errors",
+      "-std=c23",
+      "./src/matrix.c",
+      "-o",
+      "renderer"
+    ],
+    "directory": "/home/folly/render",
+    "output": "renderer"
+  },
+  {
+    "file": "./src/mesh.c",
+    "arguments": [
+      "gcc",
+      "-Wfatal-errors",
+      "-std=c23",
+      "./src/mesh.c",
+      "-o",
+      "renderer"
+    ],
+    "directory": "/home/folly/render",
+    "output": "renderer"
+  },
+  {
+    "file": "./src/swap.c",
+    "arguments": [
+      "gcc",
+      "-Wfatal-errors",
+      "-std=c23",
+      "./src/swap.c",
+      "-o",
+      "renderer"
+    ],
+    "directory": "/home/folly/render",
+    "output": "renderer"
+  },
+  {
+    "file": "./src/texture.c",
+    "arguments": [
+      "gcc",
+      "-Wfatal-errors",
+      "-std=c23",
+      "./src/texture.c",
+      "-o",
+      "renderer"
+    ],
+    "directory": "/home/folly/render",
+    "output": "renderer"
+  },
+  {
+    "file": "./src/triangle.c",
+    "arguments": [
+      "gcc",
+      "-Wfatal-errors",
+      "-std=c23",
+      "./src/triangle.c",
+      "-o",
+      "renderer"
+    ],
+    "directory": "/home/folly/render",
+    "output": "renderer"
+  },
+  {
+    "file": "./src/upng.c",
+    "arguments": [
+      "gcc",
+      "-Wfatal-errors",
+      "-std=c23",
+      "./src/upng.c",
+      "-o",
+      "renderer"
+    ],
+    "directory": "/home/folly/render",
+    "output": "renderer"
+  },
+  {
+    "file": "./src/vector.c",
+    "arguments": [
+      "gcc",
+      "-Wfatal-errors",
+      "-std=c23",
+      "./src/vector.c",
+      "-o",
+      "renderer"
+    ],
+    "directory": "/home/folly/render",
+    "output": "renderer"
+  }
+]
